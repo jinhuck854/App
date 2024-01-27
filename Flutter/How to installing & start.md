@@ -11,7 +11,18 @@
        
 <br>
 
-### 2. 프로젝트 생성
+### 2. VS - Flutter 연동
+1. VS 실행 후 "확장(Extentions)" 클릭
+2. 검색창에 "Flutter" 입력 후 설치
+3. `Ctrl + Shift + P` 누르고, "Flutter: Run Flutter Doctor" 클릭 및 설치
+4. 터미널 창에 `flutter doctor --android-licenses` 입력 및 y
+5. `Ctrl + Shift + P` 누르고, "Flutter: New Project" 클릭 및 "Application" 클릭
+6. 프로젝트 폴더 생성 및 이름 설정
+7. 실행할 때에는 `F5` 또는 `Ctrl + F5` 누르기
+
+<br>
+
+### 3. 프로젝트 생성
 1. "Android Studio" 프로그램 실행
 2. "New Flutter Project" 클릭
 3. Flutter 선택 후 "Flutter SDK path - flutter 설치 경로" 맞는지 확인
@@ -42,8 +53,15 @@ class MyApp extends StatelessWidget{
 }
 ```
 
-### 3. 프로젝트 시작
-1. 기본 위젯
+<br>
+
+### 4. 프로젝트 시작
+1. 실행
+   1) 웹 화면으로 실행 (Chrome) : "F5" 또는 "Ctrl + F5"
+   2) 휴대폰 화면으로 실행 (Android) : Emulator 실행
+      [다음을 참고](https://parkjh7764.tistory.com/172)
+
+3. 기본 위젯
    1) 글자
       `$ home: Text('...')`
    2) 이미지
