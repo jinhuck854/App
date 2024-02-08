@@ -8,6 +8,8 @@
    2) "Atom OneDark" 설치
 4. "Android Studio" 왼쪽 바에서 "Projects" 클릭 -> "More Actions" 클릭 -> "SDK Manager" 클릭 -> 바 - "SDK Tools" -> "Android  SDK Command-line Tools" 설치 후 확인
 5. 시스템 환경변수 편집 -> 환경변수 -> "PATH" 더블 클릭 -> "새로 만들기" 클릭 -> `flutter 폴더 내 bin의 경로` 추가 후 확인
+6. [Visual Studio 설치](https://visualstudio.microsoft.com/downloads/) // VS 다운로드 후 설치
+   1) `Desktop development with C++` 체크 후 필수 설치
        
 <br>
 
@@ -16,18 +18,24 @@
 2. 검색창에 "Flutter" 입력 후 설치
 3. `Ctrl + Shift + P` 누르고, "Flutter: Run Flutter Doctor" 클릭 및 설치
 4. 터미널 창에 `flutter doctor --android-licenses` 입력 및 y
-5. `Ctrl + Shift + P` 누르고, "Flutter: New Project" 클릭 및 "Application" 클릭
-6. 프로젝트 폴더 생성 및 이름 설정
-7. 실행할 때에는 `F5` 또는 `Ctrl + F5` 누르기
+   1) 안될시, `!` 또는 `X`로 표시된 부분 읽고 문제 해결하기
+   2) Visual Studio - C++ 설치되었는지 확인
+   3) '설정 - 개발자 모드' 설정 되어있는지 확인
+6. `Ctrl + Shift + P` 누르고, "Flutter: New Project" 클릭 및 "Application" 클릭
+7. 프로젝트 폴더 생성 및 이름 설정
+8. 실행할 때에는 `F5` 또는 `Ctrl + F5` 누르기
 
 <br>
 
 ### 3. 프로젝트 생성
-1. "Android Studio" 프로그램 실행
+1. "Android Studio" 또는 "VS CODE" 프로그램 실행
 2. "New Flutter Project" 클릭
 3. Flutter 선택 후 "Flutter SDK path - flutter 설치 경로" 맞는지 확인
 4. 프로젝트 명 작성 + 위치 확인 후 프로젝트 생성
 5. "프로젝트 명" -> "lib 폴더" -> "main.dart" (== 메인 페이지) // 소문자 + 언더바(_)만 가능
+   
+// Android Studio는 6, 7번까지 모두 시행
+
 6. test -> analysis_options.yaml -> rules에 다음 코드 입력 // Lint를 끄는 코드
    1) `$ prefer_typing_uninitialized_variables : false`
    2) `$ prefer_const_constructors_in_immutables : false`
@@ -60,8 +68,7 @@ class MyApp extends StatelessWidget{
    1) 웹 화면으로 실행 (Chrome) : "F5" 또는 "Ctrl + F5"
    2) 휴대폰 화면으로 실행 (Android) : Emulator 실행
       [다음을 참고](https://parkjh7764.tistory.com/172)
-
-3. 기본 위젯
+2. 기본 위젯
    1) 글자
       `$ home: Text('...')`
    2) 이미지
