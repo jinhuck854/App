@@ -53,7 +53,7 @@ class signUpAPI {
   }
 }
 ```
-5. JSON to DART 함수(2) - API 연결 + 매개변수(데이터) 전달 함수
+4. JSON to DART 함수(2) - API 연결 + 매개변수(데이터) 전달 함수
 ```
 // 회원 가입 API (2) : 데이터 저장 변수 호출 및 API 연결, 매개변수 필수
 Future<void> fetchsignUpAPI(email, name, id, password, passwordcheck) async {
@@ -88,7 +88,7 @@ Future<void> fetchsignUpAPI(email, name, id, password, passwordcheck) async {
   }
 }
 ```
-6. State 내 변수 생성
+5. State 내 변수 생성
 ```
   // 변수
   String role = ""; // 사용자 OR 관리자
@@ -98,7 +98,7 @@ Future<void> fetchsignUpAPI(email, name, id, password, passwordcheck) async {
   String userPassword = "";
   String userPasswordCheck = "";
 ```
-8. 함수 생성 + 호출 및 매개변수(데이터) 전달
+6. 함수 생성 + 호출 및 매개변수(데이터) 전달
 ```
 await fetchsignUpAPI(userEmail, userName, userId, userPassword, userPasswordCheck);
 ```
