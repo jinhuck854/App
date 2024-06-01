@@ -45,10 +45,34 @@ class _PostCardState extends State<PostCard>{
   // getLocation() : 현재 위치 정보 얻기
   Future<void> getLocation() async {
     LocationPermission permission = await Geolocator.requestPermission(); // 사용자 위치 권한
-    Position position = await Geolocator.getCurrentPosition(
+    Position position = await Geolocator.getCurrentPosition( // 사용자 위치 정보 얻음
         desiredAccuracy: LocationAccuracy.high);
-    print("위도 + 경도 : ");
-    print(position); // 위도 + 경도
+    // print("위도 + 경도 : ");
+    // print(position); // 위도 + 경도 확인용 print
+    String lat = position.latitude.toString(); // 위도 저장
+    String lon = position.longitude.toString(); // 경도 저장
+    
+    String openweatherkey = "{key}"; // openweathermap : 날씨 정보 얻는 KEY
+    var str ='http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$openweatherkey&units=metric';
+    
+    // Openweathermap 연결
+    final response = await http.get(
+        Uri.parse(str),
+      );
+
+    // 연결 확인
+    if (response.statusCode == 200) {
+        var data = jsonDecode(response.body); // string to json
+        // print('data = $data'); // 전체 데이터 출력
+        result['conditionId'] = data['weather'][0]['id'];
+        result['temperature'] = data['main']['temp'].toString();
+        result['temperature_min'] = data['main']['temp_min'].toString();
+        result['temperature_max'] = data['main']['temp_max'].toString();
+        result['humidity'] = data['main']['humidity'].toString();
+      } else {
+        print('response status code = ${response.statusCode}');
+      }
+      return result; // 결과 리턴
   }
 }
 ```
